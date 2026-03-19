@@ -2,7 +2,7 @@
 
 ## About
 
-Welcome to our [Algorithms repository](https://github.com/pfeinsper/drone-swarm-search-algorithms)! These algorithms are specifically tailored for the environments available in `DSSE`, aimed at optimizing drone swarm coordination and search efficiency.
+Welcome to our [Algorithms repository](https://github.com/capstone-insper/drone-swarm-search-algorithms)! These algorithms are specifically tailored for the environments available in `DSSE`, aimed at optimizing drone swarm coordination and search efficiency.
 
 Explore a diverse range of implementations that leverage the latest advancements in machine learning to solve complex coordination tasks in dynamic and unpredictable environments. Our repository offers state-of-the-art solutions designed to enhance the performance and adaptability of autonomous drone swarms, making them more efficient and effective in various search and rescue missions.
 
@@ -326,7 +326,7 @@ The following table provides the settings for the coverage environment used in t
 
 ## How to Run
 
-To run the experiments, you will need to navigate to the [algorithms directory](https://github.com/pfeinsper/drone-swarm-search-algorithms) and execute scripts located in the `src/` folder. Below is a brief description of the relevant scripts and the instructions on how to run them for each hypothesis testing.
+To run the experiments, you will need to navigate to the [algorithms directory](https://github.com/capstone-insper/drone-swarm-search-algorithms) and execute scripts located in the `src/` folder. Below is a brief description of the relevant scripts and the instructions on how to run them for each hypothesis testing.
 
 ```bash
 src/
@@ -430,7 +430,7 @@ These instructions provide a comprehensive guide on how to set up and run experi
 
 ## Stay Updated
 
-We appreciate your patience and interest in our work. If you have any questions or need immediate assistance regarding our `algorithms`, please do not hesitate to contact us via our [GitHub Issues page](https://github.com/pfeinsper/drone-swarm-search-algorithms/issues).
+We appreciate your patience and interest in our work. If you have any questions or need immediate assistance regarding our `algorithms`, please do not hesitate to contact us via our [GitHub Issues page](https://github.com/capstone-insper/drone-swarm-search-algorithms/issues).
 
 ## License
 This documentation is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for more details.

@@ -18,7 +18,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/pfeinsper/drone-swarm-search', ariaLabel: 'Github link' },
+      { icon: 'github', link: 'https://github.com/capstone-insper/drone-swarm-search', ariaLabel: 'Github link' },
       
       {
         icon: {
