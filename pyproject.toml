@@ -54,10 +54,10 @@ coverage = [
 ]
 
 [project.urls]
-Homepage = "https://pfeinsper.github.io/drone-swarm-search/"
-Repository = "https://github.com/pfeinsper/drone-swarm-search/"
-Documentation = "https://pfeinsper.github.io/drone-swarm-search/"
-"Bug Report" = "https://github.com/pfeinsper/drone-swarm-search/issues/"
+Homepage = "https://capstone-insper.github.io/drone-swarm-search/"
+Repository = "https://github.com/capstone-insper/drone-swarm-search/"
+Documentation = "https://capstone-insper.github.io/drone-swarm-search/"
+"Bug Report" = "https://github.com/capstone-insper/drone-swarm-search/issues/"
 
 [tool.setuptools]
 include-package-data = true

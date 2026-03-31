@@ -28,7 +28,7 @@ The DSSE project requires Python version 3.10.5 or higher.
 `pip install DSSE`
 
 #### Use
-::: details Click me to view the code <a href="https://github.com/pfeinsper/drone-swarm-search/blob/main/basic_env.py" target="blank" style="float:right"><Badge type="tip" text="basic_env.py &boxbox;" /></a>
+::: details Click me to view the code <a href="https://github.com/capstone-insper/drone-swarm-search/blob/main/basic_env.py" target="blank" style="float:right"><Badge type="tip" text="basic_env.py &boxbox;" /></a>
 ```python
 from DSSE import DroneSwarmSearch
 
@@ -343,7 +343,7 @@ If you use this package, please consider citing it with this piece of BibTeX:
 
 ## Stay Updated
 
-We appreciate your patience and interest in our work. If you have any questions or need immediate assistance regarding our `Search Environment`, please do not hesitate to contact us via our [GitHub Issues page](https://github.com/pfeinsper/drone-swarm-search/issues).
+We appreciate your patience and interest in our work. If you have any questions or need immediate assistance regarding our `Search Environment`, please do not hesitate to contact us via our [GitHub Issues page](https://github.com/capstone-insper/drone-swarm-search/issues).
 
 ## License
 This documentation is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for more details.

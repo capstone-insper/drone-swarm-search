@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x  # Choose the desired Python version
+          python-version: '3.12'
       
       - name: Cache Python Dependencies
         uses: actions/cache@v4
@@ -29,7 +29,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt upgrade
-          sudo apt-get install -y libgdal-dev gdal-bin
+          sudo apt-get install -y libgdal-dev gdal-bin libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libfreetype6-dev
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run Pytest

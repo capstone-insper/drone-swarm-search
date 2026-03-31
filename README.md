@@ -1,14 +1,14 @@
-[![Tests Status 🧪](https://github.com/pfeinsper/drone-swarm-search/actions/workflows/env.yml/badge.svg)](https://github.com/pfeinsper/drone-swarm-search/actions/workflows/env.yml)
-[![Docs Deployment 📝](https://github.com/pfeinsper/drone-swarm-search/actions/workflows/deploy.yml/badge.svg?branch=vitepress_docs)](https://github.com/pfeinsper/drone-swarm-search/actions/workflows/deploy.yml)
+[![Tests Status 🧪](https://github.com/capstone-insper/drone-swarm-search/actions/workflows/env.yml/badge.svg)](https://github.com/capstone-insper/drone-swarm-search/actions/workflows/env.yml)
+[![Docs Deployment 📝](https://github.com/capstone-insper/drone-swarm-search/actions/workflows/deploy.yml/badge.svg?branch=vitepress_docs)](https://github.com/capstone-insper/drone-swarm-search/actions/workflows/deploy.yml)
 [![PyPI Release 🚀](https://badge.fury.io/py/DSSE.svg)](https://badge.fury.io/py/DSSE)
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat)](https://github.com/pfeinsper/drone-swarm-search/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat)](https://github.com/capstone-insper/drone-swarm-search/blob/main/LICENSE)
 [![PettingZoo version dependency](https://img.shields.io/badge/PettingZoo-v1.22.3-blue)]()
 [![DOI](https://zenodo.org/badge/599323572.svg)](https://zenodo.org/doi/10.5281/zenodo.12659847)
 [![JOSS DOI](https://joss.theoj.org/papers/10.21105/joss.06746/status.svg)](https://doi.org/10.21105/joss.06746)
-![GitHub stars](https://img.shields.io/github/stars/pfeinsper/drone-swarm-search)
+![GitHub stars](https://img.shields.io/github/stars/capstone-insper/drone-swarm-search)
 [![Downloads](https://static.pepy.tech/badge/dsse)](https://pepy.tech/project/dsse)
 
-# <img src="https://raw.githubusercontent.com/pfeinsper/drone-swarm-search/main/docs/public/pics/drone.svg" alt="DSSE Icon" width="45" height="25"> Drone Swarm Search Environment (DSSE)
+# <img src="https://raw.githubusercontent.com/capstone-insper/drone-swarm-search/main/docs/public/pics/drone.svg" alt="DSSE Icon" width="45" height="25"> Drone Swarm Search Environment (DSSE)
 
 Welcome to the official GitHub repository for the Drone Swarm Search Environment (DSSE). This project offers a comprehensive simulation platform designed for developing, testing, and refining search strategies using drone swarms. Researchers and developers will find a versatile toolset supporting a broad spectrum of simulations, which facilitates the exploration of complex drone behaviors and interactions in dynamic, real-world scenarios.
 
@@ -17,9 +17,9 @@ In this repository, we have implemented two distinct types of environments. The 
 
 ## 📚 Documentation Links
 
-- **[Documentation Site](https://pfeinsper.github.io/drone-swarm-search/)**: Access comprehensive documentation including tutorials, and usage examples for the Drone Swarm Search Environment (DSSE). Ideal for users seeking detailed information about the project's capabilities and how to integrate them into their own applications.
+- **[Documentation Site](https://capstone-insper.github.io/drone-swarm-search/)**: Access comprehensive documentation including tutorials, and usage examples for the Drone Swarm Search Environment (DSSE). Ideal for users seeking detailed information about the project's capabilities and how to integrate them into their own applications.
 
-- **[Algorithm Details](https://github.com/pfeinsper/drone-swarm-search-algorithms)**: Explore in-depth discussions and source code for the algorithms powering the DSSE. This section is perfect for developers interested in the technical underpinnings and enhancements of the search algorithms.
+- **[Algorithm Details](https://github.com/capstone-insper/drone-swarm-search-algorithms)**: Explore in-depth discussions and source code for the algorithms powering the DSSE. This section is perfect for developers interested in the technical underpinnings and enhancements of the search algorithms.
 
 - **[PyPI Repository](https://pypi.org/project/DSSE/)**: Visit the PyPI page for DSSE to download the latest release, view release histories, and read additional installation instructions.
 
@@ -27,7 +27,7 @@ In this repository, we have implemented two distinct types of environments. The 
 
 ## 🎥 Visual Demonstrations
 <p align="center">
-    <img src="https://raw.githubusercontent.com/pfeinsper/drone-swarm-search/main/docs/public/gifs/render_with_grid_gradient.gif" width="400" height="400" align="center">
+    <img src="https://raw.githubusercontent.com/capstone-insper/drone-swarm-search/main/docs/public/gifs/render_with_grid_gradient.gif" width="400" height="400" align="center">
     <br>
     <em>Above: A simulation showing how drones adjust their search pattern over a grid.</em>
 </p>
@@ -96,7 +96,7 @@ while not done:
 
 ## 🎥 Visual Demonstrations
 <p align="center">
-    <img src="https://raw.githubusercontent.com/pfeinsper/drone-swarm-search/main/docs/public/gifs/basic_coverage.gif" width="400" height="400" align="center">
+    <img src="https://raw.githubusercontent.com/capstone-insper/drone-swarm-search/main/docs/public/gifs/basic_coverage.gif" width="400" height="400" align="center">
     <br>
     <em>Above: A simulation showing how drones adjust their search pattern over a grid.</em>
 </p>
