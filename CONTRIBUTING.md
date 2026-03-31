@@ -6,7 +6,7 @@ We're thrilled that you're interested in contributing to our project. Your invol
 
 Here’s how you can contribute:
 
-1. **Explore our issues**: Start by looking through the [issues](https://github.com/pfeinsper/drone-swarm-search/issues) on our GitHub repository.
+1. **Explore our issues**: Start by looking through the [issues](https://github.com/capstone-insper/drone-swarm-search/issues) on our GitHub repository.
 
 2. **Fork and clone the repository**: Once you've found an issue to work on, fork the repository and then clone it to your local machine so you can start your work.
 
