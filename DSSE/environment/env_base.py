@@ -101,7 +101,7 @@ class DroneSwarmSearchBase(ABC, ParallelEnv):
         if drones_positions is not None:
             if not self.is_valid_position_drones(drones_positions):
                 raise ValueError(
-                    "You are trying to place the drone in a invalid position"
+                    f"You are trying to place the drone in a invalid position: {drones_positions}"
                 )
 
         self.agents = copy(self.possible_agents)
