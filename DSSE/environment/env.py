@@ -258,7 +258,6 @@ class DroneSwarmSearch(DroneSwarmSearchBase):
                 else:
                     self.agents_positions[idx] = new_position
                     rewards[agent] = self.reward_scheme.default
-                self.rewards_sum[agent] += rewards[agent]
                 continue
 
             drone_found_person = False
@@ -286,11 +285,13 @@ class DroneSwarmSearch(DroneSwarmSearchBase):
 
                 if len(self.persons_set) == 0:
                     person_found = True
-                    for agent in self.agents:
-                        terminations[agent] = True
-                        truncations[agent] = True
+                    for other_agent in self.agents:
+                        terminations[other_agent] = True
+                        truncations[other_agent] = True
 
-            self.rewards_sum[agent] += rewards[agent]
+        for agent, reward in rewards.items():
+            self.rewards_sum[agent] += reward
+            self.rewards_sum["total"] += reward
 
         self.timestep += 1
         # Get dummy infos
@@ -368,3 +369,4 @@ class DroneSwarmSearch(DroneSwarmSearchBase):
     @functools.lru_cache(maxsize=None)
     def action_space(self, agent):
         return Discrete(len(self.possible_actions))
+
