@@ -82,6 +82,7 @@ class CoverageDroneSwarmSearch(DroneSwarmSearchBase):
         self.cumm_pos = 0
 
     def reset(self, seed=None, options=None):
+        self.seed_rng(seed)
         obs, _ = super().reset(seed=seed, options=options)
 
         self.reset_search_state()
