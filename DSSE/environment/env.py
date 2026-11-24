@@ -1,4 +1,3 @@
-from random import random, randint
 import functools
 import numpy as np
 from gymnasium.spaces import MultiDiscrete, Discrete, Box, Tuple
@@ -104,6 +103,7 @@ class DroneSwarmSearch(DroneSwarmSearchBase):
                 index=i,
                 initial_position=position[i],
                 grid_size=self.grid_size,
+                rng=self.np_random,
             )
             person.calculate_movement_vector(self.vector)
             persons_set.add(person)
@@ -128,12 +128,14 @@ class DroneSwarmSearch(DroneSwarmSearchBase):
 
         unique_random_positions = {central_position}
         while len(unique_random_positions) < amount:
-            dx = randint(-max_distance, max_distance)
-            dy = randint(-max_distance, max_distance)
+            dx, dy = self.np_random.integers(-max_distance, max_distance + 1, size=2)
 
             # Checking to avoid including the central position or duplicate positions.
             if (dx, dy) != (0, 0):
-                new_position = (central_position[0] + dx, central_position[1] + dy)
+                new_position = (
+                    int(central_position[0] + dx),
+                    int(central_position[1] + dy),
+                )
                 if self.is_valid_position(new_position):
                     unique_random_positions.add(new_position)
 
@@ -150,6 +152,7 @@ class DroneSwarmSearch(DroneSwarmSearchBase):
         seed=None,
         options=None,
     ):
+        self.seed_rng(seed)
         vector = options.get("vector") if options else None
         self.vector = vector if vector else self.vector
 
@@ -269,7 +272,7 @@ class DroneSwarmSearch(DroneSwarmSearchBase):
                 if drone_found_person:
                     break
 
-            random_value = random()
+            random_value = self.np_random.random()
             if drone_found_person:
                 max_detection_probability = min(human.get_mult() * self.drone.pod, 1)
 
