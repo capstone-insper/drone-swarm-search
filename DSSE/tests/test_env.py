@@ -631,3 +631,50 @@ def test_get_wrong_if_number_of_mults_is_not_equal_to_person_amount(
         env = init_drone_swarm_search(person_amount=person_amount)
         opt = {"person_pod_multipliers": mult}
         _ = env.reset(options=opt)
+
+
+def place_drone_on_person(env, drone_index):
+    person = next(iter(env.get_persons()))
+    env.agents_positions[drone_index] = (person.x, person.y)
+
+
+@pytest.mark.parametrize("drone_amount, finder_index", [(2, 0), (3, 0), (3, 1)])
+def test_rewards_sum_credits_the_drone_that_found_the_person(
+    drone_amount, finder_index
+):
+    env = init_drone_swarm_search(
+        drone_amount=drone_amount, probability_of_detection=1.0
+    )
+    drones_positions = [(i, 0) for i in range(drone_amount)]
+    env.reset(options={"drones_positions": drones_positions})
+    place_drone_on_person(env, finder_index)
+
+    actions = {agent: Actions.SEARCH.value for agent in env.agents}
+    _, rewards, terminations, _, _ = env.step(actions)
+
+    finder = f"drone{finder_index}"
+    assert all(terminations.values())
+    assert rewards[finder] > 0
+    for agent, reward in rewards.items():
+        assert env.rewards_sum[agent] == pytest.approx(reward)
+
+
+def test_rewards_sum_total_matches_sum_of_agent_rewards():
+    env = init_drone_swarm_search(drone_amount=2, probability_of_detection=1.0)
+    env.reset(options={"drones_positions": [(0, 0), (1, 0)]})
+
+    expected_total = 0.0
+    for _ in range(3):
+        actions = {agent: Actions.RIGHT.value for agent in env.agents}
+        _, rewards, _, _, _ = env.step(actions)
+        expected_total += sum(rewards.values())
+
+    place_drone_on_person(env, 1)
+    actions = {agent: Actions.SEARCH.value for agent in env.agents}
+    _, rewards, _, _, _ = env.step(actions)
+    expected_total += sum(rewards.values())
+
+    agent_total = sum(v for k, v in env.rewards_sum.items() if k != "total")
+    assert expected_total > 0
+    assert env.rewards_sum["total"] == pytest.approx(expected_total)
+    assert env.rewards_sum["total"] == pytest.approx(agent_total)
