@@ -6,6 +6,7 @@ from .entities.drone import DroneData
 from .pygame_interface import PygameInterface
 from .constants import Actions
 from gymnasium.spaces import MultiDiscrete, Discrete, Tuple, Box
+from gymnasium.utils import seeding
 from copy import copy
 
 
@@ -26,6 +27,7 @@ class DroneSwarmSearchBase(ABC, ParallelEnv):
         self.cell_size = grid_cell_size  # in meters
         self.grid_size = grid_size
         self._was_reset = False
+        self.np_random, self.np_random_seed = seeding.np_random(None)
         if not isinstance(drone_amount, int):
             raise ValueError("Drone amount must be an integer")
 
@@ -83,6 +85,18 @@ class DroneSwarmSearchBase(ABC, ParallelEnv):
             Wind resistance in m/s
         """
         return cell_size / (drone_max_speed - wind_resistance)  # in seconds
+
+    def seed_rng(self, seed: int | None = None) -> None:
+        """
+        Re-seed the environment's random number generator.
+
+        Following the Gymnasium/PettingZoo convention, the generator is only
+        re-created when a seed is given; with ``seed=None`` the existing
+        generator keeps its state, so consecutive resets keep producing
+        different (but reproducible) episodes.
+        """
+        if seed is not None:
+            self.np_random, self.np_random_seed = seeding.np_random(seed)
 
     def render(self):
         self.pygame_renderer.render_map()

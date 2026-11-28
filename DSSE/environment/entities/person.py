@@ -1,8 +1,9 @@
 import numpy as np
-from random import uniform, choice
 from numpy.linalg import norm
 from math import cos, sin, radians, pi, exp
 from DSSE.environment.simulation.time_step import calculate_time_step
+
+ANGLE_RANGES = ((0, 45), (20, 55), (300, 360), (315, 360))
 
 
 class Person:
@@ -16,6 +17,7 @@ class Person:
         initial_position: tuple[int, int],
         grid_size: int,
         mult: float = 1,
+        rng: np.random.Generator | None = None,
     ):
         """
         Class that represents a shipwrecked person in the environment.
@@ -28,7 +30,11 @@ class Person:
             The size of the grid that represents the environment (grid_size x grid_size).
         mult: float, optional
             The multiplication factor that adjusts the probability of the person's finding.
+        rng: np.random.Generator, optional
+            Random number generator used for the person's movement. Pass the
+            environment's generator to make episodes reproducible from a seed.
         """
+        self.rng = rng if rng is not None else np.random.default_rng()
         self.index = index
         self.initial_position = initial_position
         self.x, self.y = self.initial_position
@@ -37,7 +43,7 @@ class Person:
         self.time_step_relation = 1
         self.mult = mult
         self.movement_vector = (0.0, 0.0)
-        self.angle_range = choice([(0, 45), (20, 55), (300, 360), (315, 360)])
+        self.angle_range = ANGLE_RANGES[self.rng.integers(len(ANGLE_RANGES))]
 
     def step(self, movement_map: np.array) -> None:
         if self.will_move():
@@ -72,7 +78,7 @@ class Person:
         col_mov = np.sign(movement[0]) + 1
         movement_map[row_mov][col_mov] += prob_walk_weight
         movement_map /= np.sum(movement_map)
-        movement_index = np.random.choice(9, size=1, p=movement_map.flatten())[0]
+        movement_index = self.rng.choice(9, p=movement_map.flatten())
 
         if abs(self.inc_x) >= 1:
             self.inc_x -= np.sign(self.inc_x)
@@ -165,7 +171,7 @@ class Person:
         if norm(primary_movement_vector) == 0:
             return (0.0, 0.0)
 
-        angle = radians(uniform(*self.angle_range))
+        angle = radians(self.rng.uniform(*self.angle_range))
         angle_base = pi / 2
         normalized_angle_diff = abs(angle - angle_base) / pi
 
